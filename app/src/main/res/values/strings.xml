@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">Djinnverso</string>
+    <string name="country_prompt">Choose a country</string>
+
+    <string-array name="main_types_list">
+        <item>Alpha</item>
+        <item>Bravo</item>
+        <item>Charlie</item>
+        <item>Delta</item>
+        <item>Echo</item>
+        <item>Foxtrot</item>
+        <item>Golf</item>
+        <item>Hotel</item>
+        <item>India</item>
+        <item>Juliet</item>
+        <item>Kilo</item>
+        <item>Lima</item>
+        <item>Mike</item>
+    </string-array>
+
+    <string-array name="explanation_list">
+        <item>Explantion of Code</item>
+        <item>Alpha = Single</item>
+        <item>Bravo = Pair</item>
+        <item>Charlie = Two Pairs</item>
+        <item>Delta = Triple</item>
+        <item>Echo = Triple and a Pair</item>
+        <item>Foxtrot = Triple and a Triple</item>
+        <item>Golf = Four of a Kind</item>
+        <item>Hotel = Four of a Kind and a Pair</item>
+        <item>India = Four of a Kind and a Triple</item>
+        <item>Juliet = Five of a Kind</item>
+        <item>Kilo = Five of a Kind and a Pair</item>
+        <item>Lima = Six of a Kind</item>
+        <item>Mike = Seven of a Kind</item>
+    </string-array>
+
+    <string-array name="number_picker_list">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+
+    <string-array name="number_picker_list2">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+    </string-array>
+
+</resources>

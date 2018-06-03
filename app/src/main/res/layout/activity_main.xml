@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+<!-- In this layout file, some elements will be set to visible or not visible as the screen changes. Could be better done with intents, so will be updated later-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/current_bet_box"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Current Bet: "
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/current_value_box"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Current Value: "
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/name_spinner"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="4"
+            android:entries="@array/main_types_list"
+            android:prompt="@string/country_prompt"></Spinner>
+
+        <Spinner
+            android:id="@+id/number_spinner"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="2"
+            android:entries="@array/number_picker_list"
+            android:prompt="@string/country_prompt"></Spinner>
+
+        <Button
+            android:id="@+id/next_state_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="+"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:textColor="#000000"
+            android:onClick="plusButtonAction"
+            />
+
+    </LinearLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/big_bet_text"
+            android:layout_width="360dp"
+            android:layout_height="54dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteY="157dp" />
+
+        <ToggleButton
+            android:id="@+id/die1"
+            style="@style/DiceButtonStyle"
+            app:layout_constraintLeft_toRightOf="@+id/die3"
+            app:layout_constraintRight_toLeftOf="@+id/die2"
+            app:layout_constraintTop_toBottomOf="@+id/die3" />
+
+        <ToggleButton
+            android:id="@+id/die2"
+            style="@style/DiceButtonStyle"
+
+            app:layout_constraintLeft_toRightOf="@+id/die7"
+            app:layout_constraintTop_toBottomOf="@+id/die7" />
+
+        <ToggleButton
+            android:id="@+id/die3"
+            style="@style/DiceButtonStyle"
+
+            app:layout_constraintRight_toLeftOf="@+id/die7"
+            app:layout_constraintTop_toBottomOf="@+id/die7" />
+
+        <ToggleButton
+            android:id="@+id/die4"
+            style="@style/DiceButtonStyle"
+
+            app:layout_constraintBottom_toTopOf="@+id/die7"
+            app:layout_constraintRight_toLeftOf="@+id/die7" />
+
+        <ToggleButton
+            android:id="@+id/die5"
+            style="@style/DiceButtonStyle"
+            app:layout_constraintBottom_toTopOf="@+id/die6"
+            app:layout_constraintLeft_toRightOf="@+id/die4"
+            app:layout_constraintRight_toLeftOf="@+id/die6" />
+
+        <ToggleButton
+            android:id="@+id/die6"
+            style="@style/DiceButtonStyle"
+            app:layout_constraintBottom_toTopOf="@+id/die7"
+            app:layout_constraintLeft_toRightOf="@+id/die7" />
+
+        <ToggleButton
+            android:id="@+id/die7"
+            style="@style/DiceButtonStyle"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/roll_button"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="RollAction"
+            android:text="Roll"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/bid_button"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="BidAction"
+            android:text="Bid"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/challenge_button"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="ChallengeAction"
+            android:text="Challenge"
+            android:visibility="gone" />
+        />
+
+        <Button
+            android:id="@+id/accept_button"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="AcceptActionHandler"
+            android:text="Accept"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/testPrintBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello"
+        android:visibility="gone" />
+
+    <Spinner
+        android:id="@+id/explanation_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:layout_weight="0"
+        android:entries="@array/explanation_list"></Spinner>
+
+    <!--
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/prev_player"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Name" />
+
+            <EditText
+                android:id="@+id/current_player"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Name" />
+
+            <EditText
+                android:id="@+id/next_players"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Name" />
+
+        </LinearLayout>
+    -->
+
+</LinearLayout>
